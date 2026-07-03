@@ -1,0 +1,11 @@
+# Environment variables - never push these
+backend/.env
+backend/chroma_store/
+backend/uploads/
+backend/__pycache__/
+backend/documind.db
+backend/routes/__pycache__/
+backend/pipeline/__pycache__/
+backend/db/__pycache__/
+*.pyc
+*.db
