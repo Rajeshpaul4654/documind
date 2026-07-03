@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+langchain
+langchain-community
+langchain-openai
+sentence-transformers
+chromadb
+pymupdf
+openai
+pytest
+ruff
+httpx
