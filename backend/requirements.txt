@@ -8,10 +8,11 @@ passlib[bcrypt]
 langchain
 langchain-community
 langchain-openai
-sentence-transformers
+langchain-text-splitters
 chromadb
 pymupdf
-openai
+groq
 pytest
 ruff
 httpx
+python-multipart
