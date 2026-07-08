@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_BASE from "../api";
 
 function Chat({ docId }) {
   const [messages, setMessages] = useState([]);
@@ -13,7 +14,7 @@ function Chat({ docId }) {
     setQuestion("");
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/query", { doc_id: docId, question });
+      const res = await axios.post(`${API_BASE}/query`, { doc_id: docId, question });
       setMessages((prev) => [...prev, { role: "ai", text: res.data.answer }]);
     } catch {
       setMessages((prev) => [...prev, { role: "ai", text: "Error getting answer. Try again." }]);

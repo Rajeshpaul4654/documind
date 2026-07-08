@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_BASE from "../api";
 
 function Upload({ setSelectedDocId, setActiveTab }) {
   const [file, setFile] = useState(null);
@@ -14,7 +15,7 @@ function Upload({ setSelectedDocId, setActiveTab }) {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/upload", formData);
+      const res = await axios.post(`${API_BASE}/upload`, formData);
       setResult(res.data);
       setSelectedDocId(res.data.doc_id);
     } catch (err) {

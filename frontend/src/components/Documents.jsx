@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import API_BASE from "../api";
 
 function Documents({ setSelectedDocId, setActiveTab }) {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/documents").then((res) => setDocs(res.data));
+    axios.get(`${API_BASE}/documents`)
+      .then((res) => setDocs(res.data))
+      .catch((err) => console.error("Failed to fetch documents:", err));
   }, []);
 
   return (
