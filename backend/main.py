@@ -8,12 +8,8 @@ app = FastAPI(title="DocuMind AI")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://documind-blush-iota.vercel.app",
-        "https://documind-rajesh17.vercel.app"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
